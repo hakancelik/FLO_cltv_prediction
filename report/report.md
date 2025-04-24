@@ -26,7 +26,7 @@ This visual shows the distribution of customers' expected average spending value
 This graph shows how customers are distributed across different CLTV segments. It allows us to understand which segments are larger or smaller.
 
 ## 6. Average Spending by CLTV Segment
-![Average Spending by CLTV Segment](average_spending_by_cltv_segment.png)
+![Average Spending by CLTV Segment](screen/average_spending_by_cltv_segment.png)
 
 This visual compares the average spending amounts of customers in each CLTV segment. It allows us to see which segments have higher or lower spending.
 
