@@ -1,7 +1,7 @@
 # Customer Lifetime Value (CLTV) Analysis Report
 
 ## 1. CLTV Distribution
-![CLTV Distribution](cltv_distribution.png)
+![CLTV Distribution](screen/cltv_distribution.png)
 
 This graph shows the overall distribution of Customer Lifetime Values. It helps us understand the number and density of customers with different CLTV values.
 
