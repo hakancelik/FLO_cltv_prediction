@@ -36,11 +36,11 @@ This visual compares the average spending amounts of customers in each CLTV segm
 This graph shows the expected sales from each CLTV segment for the next 6 months. It helps us predict which segments will generate more revenue in the future.
 
 ## 8. Number of Customers and Total CLTV by Segment
-![Number of Customers and Total CLTV by Segment](../number_of_customers_and_total_cltv_by_segment.png)
+![Number of Customers and Total CLTV by Segment](../screen/number_of_customers_and_total_cltv_by_segment.png)
 
 This visual compares the number of customers in each segment and the total CLTV of these segments. It allows us to understand the relationship between segment size and value.
 
 ## 9. Recency and Frequency by CLTV Segment
-![Recency and Frequency by CLTV Segment](../recency_vs_frequency_by_cltv_segment.png)
+![Recency and Frequency by CLTV Segment](../screen/recency_vs_frequency_by_cltv_segment.png)
 
 This graph shows the relationship between shopping recency (time since last purchase) and frequency (shopping frequency) of customers in different CLTV segments. It helps us understand behavioral differences between segments.
