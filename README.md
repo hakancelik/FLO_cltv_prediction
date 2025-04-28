@@ -1,6 +1,6 @@
 # Customer Lifetime Value (CLTV) Analysis Project
 
-## You can reach the report of this project [here.(report/report.md)]
+## You can reach the report of this project ![here.](../report/report.md)
 
 ## About the Project
 This project is designed to perform Customer Lifetime Value (CLTV) analysis. CLTV represents the estimated total revenue a customer will generate throughout their relationship with a business.
