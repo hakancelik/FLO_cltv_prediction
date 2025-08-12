@@ -1,32 +1,92 @@
-# FLO CLTV Prediction Raporu
+# 📊 FLO CLTV Prediction Raporu
 
-Oluşturulma: 2025-08-12 20:45
+**Oluşturulma Tarihi:** 2025-08-12 21:02
 
-## Genel İstatistikler
-|       |   order_num_total_ever_online |   order_num_total_ever_offline |   customer_value_total_ever_offline |   customer_value_total_ever_online |   recency_cltv_weekly |   T_weekly |   frequency |   monetary_cltv_avg | first_order_date    | last_order_date     |   order_num_total |   customer_value_total |     cltv |
-|:------|------------------------------:|-------------------------------:|------------------------------------:|-----------------------------------:|----------------------:|-----------:|------------:|--------------------:|:--------------------|:--------------------|------------------:|-----------------------:|---------:|
-| count |                      2        |                       2        |                             2       |                            2       |              2        |   2        |    2        |             2       | 2                   | 2                   |           2       |                 2      |   2      |
-| mean  |                      1.5      |                       3.5      |                            15       |                           35       |              1.5      |   2.5      |    1.5      |            15       | 2021-01-16 12:00:00 | 2021-06-16 00:00:00 |           5       |                50      |  86.2761 |
-| min   |                      1        |                       3        |                            10       |                           30       |              1        |   2        |    1        |            10       | 2021-01-01 00:00:00 | 2021-06-01 00:00:00 |           4       |                40      |  48.3542 |
-| 25%   |                      1.25     |                       3.25     |                            12.5     |                           32.5     |              1.25     |   2.25     |    1.25     |            12.5     | 2021-01-08 18:00:00 | 2021-06-08 12:00:00 |           4.5     |                45      |  67.3151 |
-| 50%   |                      1.5      |                       3.5      |                            15       |                           35       |              1.5      |   2.5      |    1.5      |            15       | 2021-01-16 12:00:00 | 2021-06-16 00:00:00 |           5       |                50      |  86.2761 |
-| 75%   |                      1.75     |                       3.75     |                            17.5     |                           37.5     |              1.75     |   2.75     |    1.75     |            17.5     | 2021-01-24 06:00:00 | 2021-06-23 12:00:00 |           5.5     |                55      | 105.237  |
-| max   |                      2        |                       4        |                            20       |                           40       |              2        |   3        |    2        |            20       | 2021-02-01 00:00:00 | 2021-07-01 00:00:00 |           6       |                60      | 124.198  |
-| std   |                      0.707107 |                       0.707107 |                             7.07107 |                            7.07107 |              0.707107 |   0.707107 |    0.707107 |             7.07107 | nan                 | nan                 |           1.41421 |                14.1421 |  53.6296 |
+**Toplam Müşteri Sayısı:** 19,945
 
-## Segment Dağılımı
-| cltv_segment   |   count |
-|:---------------|--------:|
-| A              |       1 |
-| B              |       0 |
-| C              |       1 |
+## 📈 Executive Summary
 
-## CLTV Dağılımı
-![CLTV Dağılımı](report\cltv_dist.png)
+- **Toplam CLTV:** 3,172,465.00 TL
+- **Ortalama CLTV:** 159.06 TL
+- **Medyan CLTV:** 127.84 TL
 
-## Model Bilgileri
-- **BGF**: <lifetimes.BetaGeoFitter: fitted with 2 subjects, a: 0.54, alpha: 3.62, b: 1.19, r: 2.73>
-- **GGF**: <lifetimes.GammaGammaFitter: fitted with 2 subjects, p: 4.42, q: 1.58, v: 3.83>
+## 🎯 Segment Analizi
+
+### Segment Bazında Detaylı İstatistikler
+
+| Segment | Müşteri Sayısı | Ortalama CLTV | Toplam CLTV | Ortalama Harcama | Ortalama Frequency |
+|---------|----------------|---------------|-------------|------------------|--------------------|
+| A | 4,987 | 57.87 TL | 288,597.82 TL | 96.29 TL | 2.51 |
+| B | 9,972 | 130.69 TL | 1,303,198.59 TL | 146.30 TL | 3.55 |
+| C | 4,986 | 317.02 TL | 1,580,668.59 TL | 220.72 TL | 6.48 |
+
+## 📊 Görsel Analizler
+
+### 1. 📈 CLTV Dağılımı
+Bu grafik müşterilerin CLTV değerlerinin genel dağılımını gösterir. Çoğu müşterinin düşük-orta CLTV değerlerine sahip olduğu, az sayıda müşterinin ise çok yüksek CLTV değerlerine sahip olduğu görülmektedir.
+
+![CLTV Dağılımı](screen/cltv_distribution.png)
+
+### 2. 📊 Segment Bazında CLTV Dağılımı
+Bu kutu grafiği, her segment içindeki CLTV değerlerinin dağılımını gösterir. C segmenti en yüksek CLTV değerlerine sahipken, A segmenti en düşük değerlere sahiptir. B segmenti ise orta seviyede yer almaktadır.
+
+![Segment Bazında CLTV Dağılımı](screen/cltv_distribution_by_segment.png)
+
+### 3. 👥 Müşteri Sayısı ve Toplam CLTV (Segment Bazında)
+Sol grafik her segmentteki müşteri sayısını, sağ grafik ise her segmentin toplam CLTV katkısını gösterir. B segmentinin müşteri sayısı en fazla iken, C segmentinin toplam CLTV değeri en yüksektir.
+
+![Müşteri Sayısı ve Toplam CLTV](screen/number_of_customers_and_total_cltv_by_segment.png)
+
+### 4. 💰 Ortalama Harcama (Segment Bazında)
+Bu grafik her segmentin ortalama harcama tutarını gösterir. C segmenti müşterileri en yüksek ortalama harcamaya sahipken, A segmenti en düşük ortalama harcamaya sahiptir.
+
+![Ortalama Harcama](screen/average_spending_by_cltv_segment.png)
+
+### 5. 🥧 Müşteri Dağılımı (Segment Bazında)
+Bu pasta grafiği müşterilerin segmentlere göre yüzdelik dağılımını gösterir. Müşteri portföyünün segment bazında oransal dağılımını görsel olarak sunar.
+
+![Müşteri Dağılımı](screen/customer_distribution_by_cltv_segment.png)
+
+### 6. 📊 Expected Average Value Dağılımı
+Bu grafik müşterilerin gelecekteki ortalama harcama değerlerinin dağılımını gösterir. Model tarafından tahmin edilen bu değerler, müşterilerin gelecekteki alışveriş davranışları hakkında öngörü sağlar.
+
+![Expected Value Dağılımları](screen/expected_average_value_distribution.png)
+
+### 7. 🎯 Expected Sales (Segment Bazında)
+Bu grafik her segmentin gelecek dönemdeki ortalama satış beklentisini gösterir. C segmenti müşterilerinden en yüksek satış beklentisi vardır.
+
+![Expected Sales](screen/expected_sales_by_cltv_segment.png)
+
+### 8. 🔍 Recency vs Frequency Analizi
+Bu scatter plot müşterilerin recency (son alışverişten geçen süre) ve frequency (alışveriş sıklığı) değerlerini CLTV ile ilişkilendirir. Renkli noktalar CLTV değerini, farklı şekiller ise segmentleri temsil eder. Yüksek frequency ve düşük recency değerleri genellikle yüksek CLTV ile ilişkilidir.
+
+![Recency vs Frequency](screen/recency_vs_frequency_by_cltv_segment.png)
+
+## 📋 Detaylı İstatistikler
+
+### Genel Veri İstatistikleri
+|       |   order_num_total |   customer_value_total | first_order_date              | last_order_date               |   frequency |   recency_cltv_weekly |     T_weekly |   monetary_cltv_avg |   expected_sales |   expected_average_value |          cltv |
+|:------|------------------:|-----------------------:|:------------------------------|:------------------------------|------------:|----------------------:|-------------:|--------------------:|-----------------:|-------------------------:|--------------:|
+| count |       19945       |              19945     | 19945                         | 19945                         | 19945       |            19945      | 19945        |          19945      |  19945           |               19945      | 19945         |
+| mean  |           5.02477 |                751.244 | 2019-03-22 16:43:55.246929152 | 2021-01-17 12:59:57.653547264 |     4.02477 |               95.2635 |   114.472    |            152.399  |      0.22916     |                 164.557  |   159.061     |
+| min   |           2       |                 44.98  | 2013-01-14 00:00:00           | 2020-05-30 00:00:00           |     1       |                0      |     0.714286 |             22.49   |      4.01146e-05 |                  26.3602 |     0.0164317 |
+| 25%   |           3       |                339.98  | 2019-02-16 00:00:00           | 2020-11-11 00:00:00           |     2       |               50.4286 |    73.8571   |            103.49   |      0.145767    |                 111.391  |    82.7295    |
+| 50%   |           4       |                545.27  | 2019-08-20 00:00:00           | 2021-02-10 00:00:00           |     3       |               76.5714 |    93        |            136.735  |      0.198461    |                 146.916  |   127.837     |
+| 75%   |           6       |                897.78  | 2020-01-01 00:00:00           | 2021-04-19 00:00:00           |     5       |              109.429  |   119.429    |            182.445  |      0.274677    |                 195.941  |   193.04      |
+| max   |         202       |              45905.1   | 2021-05-27 00:00:00           | 2021-05-30 00:00:00           |   201       |              433.429  |   437.143    |           5176.59   |      3.60681     |                5406.74   | 13540.6       |
+| std   |           4.74271 |                895.402 | nan                           | nan                           |     4.74271 |               74.5894 |    74.771    |             83.5039 |      0.137485    |                  90.1132 |   180.657     |
+
+## 🤖 Model Bilgileri
+
+- **BGF**: <lifetimes.BetaGeoFitter: fitted with 19945 subjects, a: 0.00, alpha: 50.73, b: 0.08, r: 1.94>
+- **GGF**: <lifetimes.GammaGammaFitter: fitted with 19945 subjects, p: 4.18, q: 0.47, v: 4.06>
+
+## 💡 Öneriler
+
+1. **En Yüksek Değerli Segment (C):** Bu segment müşterilerine özel sadakat programları uygulanmalı.
+2. **En Düşük Değerli Segment (A):** Bu segment için aktivasyon kampanyaları düzenlenebilir.
+3. **Orta Segment Müşteriler:** Upselling ve cross-selling fırsatları değerlendirilebilir.
+4. **Yüksek Frequency Müşteriler:** Daha sık alışveriş yapan müşterilere özel indirimler sunulabilir.
 
 ---
-Otomatik oluşturulmuştur.
+*Bu rapor FLO CLTV Prediction sistemi tarafından otomatik oluşturulmuştur.*

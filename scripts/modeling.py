@@ -63,6 +63,21 @@ def calculate_cltv(
         discount_rate (float): İskonto oranı.
     """
     try:
+        # Expected Sales hesapla
+        cltv_df["expected_sales"] = bgf.predict(
+            time,
+            cltv_df['frequency'],
+            cltv_df['recency_cltv_weekly'],
+            cltv_df['T_weekly']
+        )
+        
+        # Expected Average Value hesapla
+        cltv_df["expected_average_value"] = ggf.conditional_expected_average_profit(
+            cltv_df['frequency'],
+            cltv_df['monetary_cltv_avg']
+        )
+        
+        # CLTV hesapla
         cltv = ggf.customer_lifetime_value(
             bgf,
             cltv_df['frequency'],
@@ -74,7 +89,7 @@ def calculate_cltv(
             discount_rate=discount_rate
         )
         cltv_df["cltv"] = cltv
-        logging.info("CLTV başarıyla hesaplandı ve eklendi.")
+        logging.info("CLTV, expected sales ve expected average value başarıyla hesaplandı.")
     except Exception as e:
         logging.error(f"CLTV hesaplanırken hata oluştu: {e}")
         raise
