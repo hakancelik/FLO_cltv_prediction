@@ -1,28 +1,49 @@
-from data_processing import load_data, process_outliers, create_total_columns, convert_date_columns
-from modeling import fit_bgf_model, fit_ggf_model, calculate_cltv
-from segmentation import segment_customers
-from visualization import plot_cltv_distribution
+#!/usr/bin/env python
+"""
+FLO CLTV Prediction - Main Script
+Runs the complete CLTV pipeline including data processing, modeling, segmentation, and reporting.
+"""
 
-# Load and process data
-df = load_data("data/flo_data_20k.csv")
-process_outliers(df, ["order_num_total_ever_online", "order_num_total_ever_offline", 
-                      "customer_value_total_ever_offline", "customer_value_total_ever_online"])
-create_total_columns(df)
-convert_date_columns(df)
+from scripts.data_processing import load_data
+from scripts.pipeline import cltv_pipeline
+import logging
 
-# Modeling
-cltv_df = df[["master_id", "last_order_date", "first_order_date", "order_num_total", "customer_value_total"]].copy()
-cltv_df["recency_cltv_weekly"] = ((df["last_order_date"] - df["first_order_date"]).dt.days / 7)
-cltv_df["T_weekly"] = ((pd.Timestamp("2021-06-01") - df["first_order_date"]).dt.days / 7)
-cltv_df["frequency"] = df["order_num_total"]
-cltv_df["monetary_cltv_avg"] = df["customer_value_total"] / df["order_num_total"]
+# Set up logging
+logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
-bgf = fit_bgf_model(cltv_df)
-ggf = fit_ggf_model(cltv_df)
-calculate_cltv(bgf, ggf, cltv_df)
 
-# Segmentation
-segment_customers(cltv_df)
+def main():
+    """Main function to run the complete CLTV analysis pipeline."""
+    try:
+        print("🚀 FLO CLTV Prediction Pipeline Başlıyor...")
 
-# Visualization
-plot_cltv_distribution(cltv_df)
+        # Load data
+        df = load_data()
+        print(f"📊 Veri yüklendi: {len(df)} müşteri")
+
+        # Run complete pipeline
+        result_df = cltv_pipeline(df)
+
+        print("✅ Pipeline başarıyla tamamlandı!")
+        print(f"📈 CLTV hesaplanan müşteri sayısı: {len(result_df)}")
+        print("📂 Raporlar 'report/' klasöründe oluşturuldu")
+        print("📊 Grafikler 'screen/' klasöründe kaydedildi")
+
+        # Show segment summary
+        if 'cltv_segment' in result_df.columns:
+            segment_counts = result_df['cltv_segment'].value_counts().sort_index()
+            print("\n📋 Segment Dağılımı:")
+            for segment, count in segment_counts.items():
+                print(f"   {segment}: {count} müşteri")
+
+    except Exception as e:
+        logging.error(f"Pipeline sırasında hata oluştu: {e}")
+        print(f"❌ Hata: {e}")
+        return 1
+
+    return 0
+
+
+if __name__ == "__main__":
+    exit(main())
+

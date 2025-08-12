@@ -1,46 +1,32 @@
-# Customer Lifetime Value (CLTV) Analysis Report
+# FLO CLTV Prediction Raporu
 
-## 1. CLTV Distribution
-![CLTV Distribution](../screen/cltv_distribution.png)
+Oluşturulma: 2025-08-12 20:45
 
-This graph shows the overall distribution of Customer Lifetime Values. It helps us understand the number and density of customers with different CLTV values.
+## Genel İstatistikler
+|       |   order_num_total_ever_online |   order_num_total_ever_offline |   customer_value_total_ever_offline |   customer_value_total_ever_online |   recency_cltv_weekly |   T_weekly |   frequency |   monetary_cltv_avg | first_order_date    | last_order_date     |   order_num_total |   customer_value_total |     cltv |
+|:------|------------------------------:|-------------------------------:|------------------------------------:|-----------------------------------:|----------------------:|-----------:|------------:|--------------------:|:--------------------|:--------------------|------------------:|-----------------------:|---------:|
+| count |                      2        |                       2        |                             2       |                            2       |              2        |   2        |    2        |             2       | 2                   | 2                   |           2       |                 2      |   2      |
+| mean  |                      1.5      |                       3.5      |                            15       |                           35       |              1.5      |   2.5      |    1.5      |            15       | 2021-01-16 12:00:00 | 2021-06-16 00:00:00 |           5       |                50      |  86.2761 |
+| min   |                      1        |                       3        |                            10       |                           30       |              1        |   2        |    1        |            10       | 2021-01-01 00:00:00 | 2021-06-01 00:00:00 |           4       |                40      |  48.3542 |
+| 25%   |                      1.25     |                       3.25     |                            12.5     |                           32.5     |              1.25     |   2.25     |    1.25     |            12.5     | 2021-01-08 18:00:00 | 2021-06-08 12:00:00 |           4.5     |                45      |  67.3151 |
+| 50%   |                      1.5      |                       3.5      |                            15       |                           35       |              1.5      |   2.5      |    1.5      |            15       | 2021-01-16 12:00:00 | 2021-06-16 00:00:00 |           5       |                50      |  86.2761 |
+| 75%   |                      1.75     |                       3.75     |                            17.5     |                           37.5     |              1.75     |   2.75     |    1.75     |            17.5     | 2021-01-24 06:00:00 | 2021-06-23 12:00:00 |           5.5     |                55      | 105.237  |
+| max   |                      2        |                       4        |                            20       |                           40       |              2        |   3        |    2        |            20       | 2021-02-01 00:00:00 | 2021-07-01 00:00:00 |           6       |                60      | 124.198  |
+| std   |                      0.707107 |                       0.707107 |                             7.07107 |                            7.07107 |              0.707107 |   0.707107 |    0.707107 |             7.07107 | nan                 | nan                 |           1.41421 |                14.1421 |  53.6296 |
 
-## 2. CLTV Distribution by Segment
-![CLTV Distribution by Segment](../screen/cltv_distribution_by_segment.png)
+## Segment Dağılımı
+| cltv_segment   |   count |
+|:---------------|--------:|
+| A              |       1 |
+| B              |       0 |
+| C              |       1 |
 
-This visual compares the CLTV distributions of different customer segments. It is useful for understanding the CLTV profile of each segment and seeing differences between segments.
+## CLTV Dağılımı
+![CLTV Dağılımı](report\cltv_dist.png)
 
-## 3. Expected Sales Distribution (3 Months and 6 Months)
-![Expected Sales Distribution](../screen/expected_sales_distribution.png)
+## Model Bilgileri
+- **BGF**: <lifetimes.BetaGeoFitter: fitted with 2 subjects, a: 0.54, alpha: 3.62, b: 1.19, r: 2.73>
+- **GGF**: <lifetimes.GammaGammaFitter: fitted with 2 subjects, p: 4.42, q: 1.58, v: 3.83>
 
-This graph compares the expected sales distributions for the next 3 months and 6 months. It allows us to see and compare short-term and medium-term sales forecasts.
-
-## 4. Expected Average Value Distribution
-![Expected Average Value Distribution](../screen/expected_average_value_distribution.png)
-
-This visual shows the distribution of customers' expected average spending values. It helps us understand the average revenue expectation per customer.
-
-## 5. Customer Distribution by CLTV Segment
-![Customer Distribution by CLTV Segment](../screen/customer_distribution_by_cltv_segment.png)
-
-This graph shows how customers are distributed across different CLTV segments. It allows us to understand which segments are larger or smaller.
-
-## 6. Average Spending by CLTV Segment
-![Average Spending by CLTV Segment](../screen/average_spending_by_cltv_segment.png)
-
-This visual compares the average spending amounts of customers in each CLTV segment. It allows us to see which segments have higher or lower spending.
-
-## 7. Expected Sales by CLTV Segment (6 Months)
-![Expected Sales by CLTV Segment](../screen/expected_sales_by_cltv_segment.png)
-
-This graph shows the expected sales from each CLTV segment for the next 6 months. It helps us predict which segments will generate more revenue in the future.
-
-## 8. Number of Customers and Total CLTV by Segment
-![Number of Customers and Total CLTV by Segment](../screen/number_of_customers_and_total_cltv_by_segment.png)
-
-This visual compares the number of customers in each segment and the total CLTV of these segments. It allows us to understand the relationship between segment size and value.
-
-## 9. Recency and Frequency by CLTV Segment
-![Recency and Frequency by CLTV Segment](../screen/recency_vs_frequency_by_cltv_segment.png)
-
-This graph shows the relationship between shopping recency (time since last purchase) and frequency (shopping frequency) of customers in different CLTV segments. It helps us understand behavioral differences between segments.
+---
+Otomatik oluşturulmuştur.
