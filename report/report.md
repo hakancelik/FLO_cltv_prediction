@@ -1,6 +1,6 @@
 # 📊 FLO CLTV Prediction Raporu
 
-**Oluşturulma Tarihi:** 2025-08-12 21:02
+**Oluşturulma Tarihi:** 2025-08-12 21:07
 
 **Toplam Müşteri Sayısı:** 19,945
 
@@ -25,42 +25,42 @@
 ### 1. 📈 CLTV Dağılımı
 Bu grafik müşterilerin CLTV değerlerinin genel dağılımını gösterir. Çoğu müşterinin düşük-orta CLTV değerlerine sahip olduğu, az sayıda müşterinin ise çok yüksek CLTV değerlerine sahip olduğu görülmektedir.
 
-![CLTV Dağılımı](screen/cltv_distribution.png)
+![CLTV Dağılımı](https://raw.githubusercontent.com/hakancelik/FLO_cltv_prediction/main/screen/cltv_distribution.png)
 
 ### 2. 📊 Segment Bazında CLTV Dağılımı
 Bu kutu grafiği, her segment içindeki CLTV değerlerinin dağılımını gösterir. C segmenti en yüksek CLTV değerlerine sahipken, A segmenti en düşük değerlere sahiptir. B segmenti ise orta seviyede yer almaktadır.
 
-![Segment Bazında CLTV Dağılımı](screen/cltv_distribution_by_segment.png)
+![Segment Bazında CLTV Dağılımı](https://raw.githubusercontent.com/hakancelik/FLO_cltv_prediction/main/screen/cltv_distribution_by_segment.png)
 
 ### 3. 👥 Müşteri Sayısı ve Toplam CLTV (Segment Bazında)
 Sol grafik her segmentteki müşteri sayısını, sağ grafik ise her segmentin toplam CLTV katkısını gösterir. B segmentinin müşteri sayısı en fazla iken, C segmentinin toplam CLTV değeri en yüksektir.
 
-![Müşteri Sayısı ve Toplam CLTV](screen/number_of_customers_and_total_cltv_by_segment.png)
+![Müşteri Sayısı ve Toplam CLTV](https://raw.githubusercontent.com/hakancelik/FLO_cltv_prediction/main/screen/number_of_customers_and_total_cltv_by_segment.png)
 
 ### 4. 💰 Ortalama Harcama (Segment Bazında)
 Bu grafik her segmentin ortalama harcama tutarını gösterir. C segmenti müşterileri en yüksek ortalama harcamaya sahipken, A segmenti en düşük ortalama harcamaya sahiptir.
 
-![Ortalama Harcama](screen/average_spending_by_cltv_segment.png)
+![Ortalama Harcama](https://raw.githubusercontent.com/hakancelik/FLO_cltv_prediction/main/screen/average_spending_by_cltv_segment.png)
 
 ### 5. 🥧 Müşteri Dağılımı (Segment Bazında)
 Bu pasta grafiği müşterilerin segmentlere göre yüzdelik dağılımını gösterir. Müşteri portföyünün segment bazında oransal dağılımını görsel olarak sunar.
 
-![Müşteri Dağılımı](screen/customer_distribution_by_cltv_segment.png)
+![Müşteri Dağılımı](https://raw.githubusercontent.com/hakancelik/FLO_cltv_prediction/main/screen/customer_distribution_by_cltv_segment.png)
 
 ### 6. 📊 Expected Average Value Dağılımı
 Bu grafik müşterilerin gelecekteki ortalama harcama değerlerinin dağılımını gösterir. Model tarafından tahmin edilen bu değerler, müşterilerin gelecekteki alışveriş davranışları hakkında öngörü sağlar.
 
-![Expected Value Dağılımları](screen/expected_average_value_distribution.png)
+![Expected Value Dağılımları](https://raw.githubusercontent.com/hakancelik/FLO_cltv_prediction/main/screen/expected_average_value_distribution.png)
 
 ### 7. 🎯 Expected Sales (Segment Bazında)
 Bu grafik her segmentin gelecek dönemdeki ortalama satış beklentisini gösterir. C segmenti müşterilerinden en yüksek satış beklentisi vardır.
 
-![Expected Sales](screen/expected_sales_by_cltv_segment.png)
+![Expected Sales](https://raw.githubusercontent.com/hakancelik/FLO_cltv_prediction/main/screen/expected_sales_by_cltv_segment.png)
 
 ### 8. 🔍 Recency vs Frequency Analizi
 Bu scatter plot müşterilerin recency (son alışverişten geçen süre) ve frequency (alışveriş sıklığı) değerlerini CLTV ile ilişkilendirir. Renkli noktalar CLTV değerini, farklı şekiller ise segmentleri temsil eder. Yüksek frequency ve düşük recency değerleri genellikle yüksek CLTV ile ilişkilidir.
 
-![Recency vs Frequency](screen/recency_vs_frequency_by_cltv_segment.png)
+![Recency vs Frequency](https://raw.githubusercontent.com/hakancelik/FLO_cltv_prediction/main/screen/recency_vs_frequency_by_cltv_segment.png)
 
 ## 📋 Detaylı İstatistikler
 

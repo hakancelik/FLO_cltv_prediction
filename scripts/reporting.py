@@ -156,6 +156,9 @@ def generate_report(df: pd.DataFrame, model_info: dict = None):
     
     now = datetime.now().strftime("%Y-%m-%d %H:%M")
     
+    # GitHub raw URL base - repository specific
+    github_base_url = "https://raw.githubusercontent.com/hakancelik/FLO_cltv_prediction/main/screen"
+    
     with open(REPORT_PATH, "w", encoding="utf-8") as f:
         f.write("# 📊 FLO CLTV Prediction Raporu\n\n")
         f.write(f"**Oluşturulma Tarihi:** {now}\n\n")
@@ -201,48 +204,48 @@ def generate_report(df: pd.DataFrame, model_info: dict = None):
         f.write("Bu grafik müşterilerin CLTV değerlerinin genel dağılımını gösterir. ")
         f.write("Çoğu müşterinin düşük-orta CLTV değerlerine sahip olduğu, ")
         f.write("az sayıda müşterinin ise çok yüksek CLTV değerlerine sahip olduğu görülmektedir.\n\n")
-        f.write("![CLTV Dağılımı](screen/cltv_distribution.png)\n\n")
+        f.write(f"![CLTV Dağılımı]({github_base_url}/cltv_distribution.png)\n\n")
         
         f.write("### 2. 📊 Segment Bazında CLTV Dağılımı\n")
         f.write("Bu kutu grafiği, her segment içindeki CLTV değerlerinin dağılımını gösterir. ")
         f.write("C segmenti en yüksek CLTV değerlerine sahipken, A segmenti en düşük değerlere sahiptir. ")
         f.write("B segmenti ise orta seviyede yer almaktadır.\n\n")
-        f.write("![Segment Bazında CLTV Dağılımı](screen/cltv_distribution_by_segment.png)\n\n")
+        f.write(f"![Segment Bazında CLTV Dağılımı]({github_base_url}/cltv_distribution_by_segment.png)\n\n")
         
         f.write("### 3. 👥 Müşteri Sayısı ve Toplam CLTV (Segment Bazında)\n")
         f.write("Sol grafik her segmentteki müşteri sayısını, sağ grafik ise ")
         f.write("her segmentin toplam CLTV katkısını gösterir. ")
         f.write("B segmentinin müşteri sayısı en fazla iken, C segmentinin toplam CLTV değeri en yüksektir.\n\n")
-        f.write("![Müşteri Sayısı ve Toplam CLTV](screen/number_of_customers_and_total_cltv_by_segment.png)\n\n")
+        f.write(f"![Müşteri Sayısı ve Toplam CLTV]({github_base_url}/number_of_customers_and_total_cltv_by_segment.png)\n\n")
         
         f.write("### 4. 💰 Ortalama Harcama (Segment Bazında)\n")
         f.write("Bu grafik her segmentin ortalama harcama tutarını gösterir. ")
         f.write("C segmenti müşterileri en yüksek ortalama harcamaya sahipken, ")
         f.write("A segmenti en düşük ortalama harcamaya sahiptir.\n\n")
-        f.write("![Ortalama Harcama](screen/average_spending_by_cltv_segment.png)\n\n")
+        f.write(f"![Ortalama Harcama]({github_base_url}/average_spending_by_cltv_segment.png)\n\n")
         
         f.write("### 5. 🥧 Müşteri Dağılımı (Segment Bazında)\n")
         f.write("Bu pasta grafiği müşterilerin segmentlere göre yüzdelik dağılımını gösterir. ")
         f.write("Müşteri portföyünün segment bazında oransal dağılımını görsel olarak sunar.\n\n")
-        f.write("![Müşteri Dağılımı](screen/customer_distribution_by_cltv_segment.png)\n\n")
+        f.write(f"![Müşteri Dağılımı]({github_base_url}/customer_distribution_by_cltv_segment.png)\n\n")
         
         f.write("### 6. 📊 Expected Average Value Dağılımı\n")
         f.write("Bu grafik müşterilerin gelecekteki ortalama harcama değerlerinin dağılımını gösterir. ")
         f.write("Model tarafından tahmin edilen bu değerler, müşterilerin gelecekteki ")
         f.write("alışveriş davranışları hakkında öngörü sağlar.\n\n")
-        f.write("![Expected Value Dağılımları](screen/expected_average_value_distribution.png)\n\n")
+        f.write(f"![Expected Value Dağılımları]({github_base_url}/expected_average_value_distribution.png)\n\n")
         
         f.write("### 7. 🎯 Expected Sales (Segment Bazında)\n")
         f.write("Bu grafik her segmentin gelecek dönemdeki ortalama satış beklentisini gösterir. ")
         f.write("C segmenti müşterilerinden en yüksek satış beklentisi vardır.\n\n")
-        f.write("![Expected Sales](screen/expected_sales_by_cltv_segment.png)\n\n")
+        f.write(f"![Expected Sales]({github_base_url}/expected_sales_by_cltv_segment.png)\n\n")
         
         f.write("### 8. 🔍 Recency vs Frequency Analizi\n")
         f.write("Bu scatter plot müşterilerin recency (son alışverişten geçen süre) ve ")
         f.write("frequency (alışveriş sıklığı) değerlerini CLTV ile ilişkilendirir. ")
         f.write("Renkli noktalar CLTV değerini, farklı şekiller ise segmentleri temsil eder. ")
         f.write("Yüksek frequency ve düşük recency değerleri genellikle yüksek CLTV ile ilişkilidir.\n\n")
-        f.write("![Recency vs Frequency](screen/recency_vs_frequency_by_cltv_segment.png)\n\n")
+        f.write(f"![Recency vs Frequency]({github_base_url}/recency_vs_frequency_by_cltv_segment.png)\n\n")
         
         # Detailed Statistics
         f.write("## 📋 Detaylı İstatistikler\n\n")
